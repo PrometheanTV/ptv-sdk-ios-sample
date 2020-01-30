@@ -57,6 +57,7 @@ class PlayerUIView: UIView {
       self.videoPosition.wrappedValue = time.seconds / self.videoDuration.wrappedValue
     }
     
+    // Add player observers
     PTVSDK.monitorAVPlayer(player: player)
   }
   
@@ -76,6 +77,9 @@ class PlayerUIView: UIView {
     durationObservation = nil
     
     if let observation = timeObservation {
+      // Remove player observers
+      PTVSDK.unmonitorAVPlayer()
+      
       player.removeTimeObserver(observation)
       timeObservation = nil
     }
@@ -101,9 +105,10 @@ struct PlayerView: UIViewRepresentable {
                               seeking: $seeking,
                               videoDuration: $videoDuration,
                               videoPosition: $videoPosition)
+    
+    // Create overlay data object and overlays to player view
     let overlayData = PTVSDKOverlayData(channelId: sampleChannelId,
                                         streamId: sampleStreamId)
-    
     PTVSDK.addOverlaysToPlayerView(playerView: uiView, overlayData: overlayData)
     
     return uiView
@@ -115,6 +120,9 @@ struct PlayerView: UIViewRepresentable {
     }
     
     playerUIView.cleanUp()
+    
+    // Remove overlays
+    PTVSDK.removeOverlays()
   }
 }
 
