@@ -12,7 +12,7 @@ import SwiftUI
 
 let sampleChannelId = "5c701be7dc3d20080e4092f4"
 let sampleStreamId = "5de7e7c2a6adde5211684519"
-let sampleVideoUrl = "https://d2zihajmogu5jn.cloudfront.net/bipbop-advanced/bipbop_16x9_variant.m3u8"
+let sampleVideoUrl = "https://bitdash-a.akamaihd.net/content/sintel/hls/playlist.m3u8"
 
 // This is the UIView that contains the AVPlayerLayer for rendering the video
 class PlayerUIView: UIView {
@@ -59,6 +59,20 @@ class PlayerUIView: UIView {
     
     // Add player observers
     PTVSDK.monitorAVPlayer(player: player)
+    
+    // Attach config ready callback handler to use
+    // stream sources paired in Broadcast Center.
+    PTVSDK.onConfigReady = { configData in
+      if let sources = configData.sources {
+        // Load first playable source from array.
+        for source in sources {
+          if let url = source.url, AVAsset(url: url).isPlayable {
+            self.player.replaceCurrentItem(with: AVPlayerItem(url: url))
+            break
+          }
+        }
+      }
+    }
   }
   
   required init?(coder: NSCoder) {
