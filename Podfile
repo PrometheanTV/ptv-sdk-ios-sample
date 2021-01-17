@@ -6,5 +6,5 @@ target 'SampleApp' do
   use_frameworks!
 
   # Pods for SampleApp
-  pod 'PTVSDK'
+  pod 'PTVSDK', '0.12.0'
 end
