@@ -369,7 +369,6 @@
 				PRODUCT_NAME = SampleApp;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				VALID_ARCHS = "$(ARCHS_STANDARD)";
 			};
 			name = Debug;
 		};
@@ -382,6 +381,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"SampleApp/Preview Content\"";
 				DEVELOPMENT_TEAM = 4FLNJKGBZ5;
 				ENABLE_PREVIEWS = YES;
+				EXCLUDED_ARCHS = "";
 				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = "";
 				INFOPLIST_FILE = "$(SRCROOT)/SampleApp/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -392,7 +392,6 @@
 				PRODUCT_NAME = SampleApp;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				VALID_ARCHS = "$(ARCHS_STANDARD)";
 			};
 			name = Release;
 		};
