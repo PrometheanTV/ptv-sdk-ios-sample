@@ -120,10 +120,13 @@ struct PlayerView: UIViewRepresentable {
                               videoDuration: $videoDuration,
                               videoPosition: $videoPosition)
     
-    // Create overlay data object and overlays to player view
+    // Create overlay data object
     let overlayData = PTVSDKOverlayData(channelId: sampleChannelId,
                                         streamId: sampleStreamId)
-    PTVSDK.addOverlaysToPlayerView(playerView: uiView, overlayData: overlayData)
+    
+    // Add overlays to player view
+    PTVSDK.addOverlaysToPlayerView(playerView: uiView,
+                                   overlayData: overlayData)
     
     return uiView
   }

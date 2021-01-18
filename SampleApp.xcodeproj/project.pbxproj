@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -14,7 +14,6 @@
 		0C8DC070232900BA000B067C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0C8DC06F232900BA000B067C /* Preview Assets.xcassets */; };
 		0C8DC073232900BA000B067C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0C8DC071232900BA000B067C /* LaunchScreen.storyboard */; };
 		0C8DC07B23290175000B067C /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C8DC07A23290175000B067C /* Utility.swift */; };
-		657FB95AB099C16F0A2F834F /* Pods_SampleApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06B182C7E2EC76653E359E8D /* Pods_SampleApp.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,7 +36,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				657FB95AB099C16F0A2F834F /* Pods_SampleApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -99,7 +97,6 @@
 				3FBBD58167ED1113CE9736C5 /* Pods-SampleApp.debug.xcconfig */,
 				C3F7B838F4B6F5FFFE85FA4E /* Pods-SampleApp.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -362,6 +359,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"SampleApp/Preview Content\"";
 				DEVELOPMENT_TEAM = 4FLNJKGBZ5;
 				ENABLE_PREVIEWS = YES;
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = "";
 				INFOPLIST_FILE = "$(SRCROOT)/SampleApp/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -383,6 +381,8 @@
 				DEVELOPMENT_ASSET_PATHS = "\"SampleApp/Preview Content\"";
 				DEVELOPMENT_TEAM = 4FLNJKGBZ5;
 				ENABLE_PREVIEWS = YES;
+				EXCLUDED_ARCHS = "";
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = "";
 				INFOPLIST_FILE = "$(SRCROOT)/SampleApp/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
